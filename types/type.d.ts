@@ -1,29 +1,4 @@
-import { TouchableOpacityProps } from "react-native";
-
-declare module "*.png" {
-  const value: any;
-  export default value;
-}
-
-declare module "*.jpg" {
-  const value: any;
-  export default value;
-}
-
-declare module "*.jpeg" {
-  const value: any;
-  export default value;
-}
-
-declare module "*.gif" {
-  const value: any;
-  export default value;
-}
-
-declare module "*.svg" {
-  const value: any;
-  export default value;
-}
+import { TextInputProps, TouchableOpacityProps } from "react-native";
 
 declare interface ButtonProps extends TouchableOpacityProps {
   title: string;
@@ -31,5 +6,16 @@ declare interface ButtonProps extends TouchableOpacityProps {
   textVariant?: "primary" | "default" | "secondary" | "danger" | "success";
   IconLeft?: React.ComponentType<any>;
   IconRight?: React.ComponentType<any>;
+  className?: string;
+}
+
+declare interface InputFieldProps extends TextInputProps {
+  label: string;
+  icon?: any;
+  secureTextEntry?: boolean;
+  labelStyle?: string;
+  containerStyle?: string;
+  inputStyle?: string;
+  iconStyle?: string;
   className?: string;
 }

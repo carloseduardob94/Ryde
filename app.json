@@ -20,7 +20,7 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "server",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -30,8 +30,8 @@
         {
           "image": "./assets/images/splash.png",
           "imageWidth": 200,
-          "resizeMode": "cover",
-          "backgroundColor": "#ffffff"
+          "resizeMode": "contain",
+          "backgroundColor": "#2F80ED"
         }
       ]
     ],

@@ -1,3 +1,5 @@
+import { ClerkProvider } from '@clerk/clerk-expo';
+import { tokenCache } from "@clerk/clerk-expo/token-cache";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -19,6 +21,7 @@ export default function RootLayout() {
     "Jakarta-SemiBold": require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
   });
 
+
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
@@ -30,14 +33,10 @@ export default function RootLayout() {
   }
 
   return (
-    <>
-      <StatusBar hidden={true} />
+    <ClerkProvider tokenCache={tokenCache}>
+      <StatusBar translucent backgroundColor="transparent" barStyle="dark-content" />
 
       <Stack>
-        {/* <Stack.Screen
-          name="(tabs)"
-          options={{ headerShown: false }}
-        /> */}
         <Stack.Screen
           name="index"
           options={{ headerShown: false }}
@@ -51,6 +50,6 @@ export default function RootLayout() {
           options={{ headerShown: false }}
         />
       </Stack>
-    </>
+    </ClerkProvider>
   );
 }

@@ -10,11 +10,11 @@ export default function Layout() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="sign-up"
+        name="sign-in"
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="sign-in"
+        name="sign-up"
         options={{ headerShown: false }}
       />
     </Stack>
